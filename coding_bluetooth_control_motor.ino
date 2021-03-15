@@ -14,6 +14,9 @@ int MOTOR8 = 21;
 int MOTOR9 = 2;
 int MOTOR10 = 3;
 
+int state = 0;
+int state2 = 0;
+
 void setup() 
 {   
  Serial.begin(9600); 
@@ -55,6 +58,44 @@ void loop()
  { 
     Kiri();
  }
+
+ else if (flag == 'E')
+ {
+    state = 1; 
+ }
+
+ else if (flag == 'F')
+ {
+    state = 0; 
+ }
+
+ else if (flag == 'G')
+ {
+    state2 = 1; 
+ }
+
+ else if (flag == 'H')
+ {
+    state2 = 0; 
+ }
+
+ if (state == 1){
+    digitalWrite (MOTOR9, HIGH);
+  }
+
+ else if (state == 0){
+    digitalWrite (MOTOR9, LOW);
+  }
+
+ if (state2 == 1){
+    digitalWrite (MOTOR10, HIGH);
+  }
+
+ else if (state2 == 0){
+    digitalWrite (MOTOR10, LOW);
+  }
+
+ 
 
 
 }  
